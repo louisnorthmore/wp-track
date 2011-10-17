@@ -57,6 +57,6 @@ global $post;
 if($post->post_type == 'track-projects') {
 $template = MY_PLUGIN_TEMPLATES . '/projects.php';
 }
-return $template
+return $template;
 }
 ?>
