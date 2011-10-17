@@ -59,4 +59,13 @@ $template = MY_PLUGIN_TEMPLATES . '/projects.php';
 }
 return $template;
 }
+
+function list_proeject_tasks() {
+
+}
+
+function list_project_bugs() {
+
+}
+
 ?>
