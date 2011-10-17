@@ -9,10 +9,11 @@ Author URI: http://www.northmore.net
 License: GPL2
 */
 
+define( 'MY_PLUGIN_TEMPLATES', dirname( __FILE__ ) . '/templates' );
 
 //create post type for projects
 add_action( 'init', 'track_create_post_type' );
-function wp_track_create_post_type() {
+function track_create_post_type() {
 	register_post_type( 'track-projects',
 		array(
 			'labels' => array(
@@ -28,7 +29,7 @@ register_post_type( 'track-tasks',
 		array(
 			'labels' => array(
 				'name' => __( 'Tasks' ),
-				'singular_name' => __( 'Tasks' )
+				'singular_name' => __( 'Task' )
 			),
 		'public' => true,
 		'has_archive' => true,
@@ -39,12 +40,23 @@ register_post_type( 'track-bugs',
 		array(
 			'labels' => array(
 				'name' => __( 'Bugs' ),
-				'singular_name' => __( 'Bugs' )
+				'singular_name' => __( 'Bug' )
 			),
 		'public' => true,
 		'has_archive' => true,
 		'rewrite' => array('slug' => 'bugs')
 		)
 	);
+}
+
+add_filter('template_include', 'track_templates');
+
+function track_templates() {
+global $post;
+
+if($post->post_type == 'track-projects') {
+$template = MY_PLUGIN_TEMPLATES . '/projects.php';
+}
+
 }
 ?>
