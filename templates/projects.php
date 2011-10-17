@@ -1,6 +1,6 @@
 <?php
 
-
+echo "projects.php";
 //WP-TRACK - PROJECTS TEMPLATE
 
 get_header();
