@@ -51,12 +51,12 @@ register_post_type( 'track-bugs',
 
 add_filter('template_include', 'track_templates');
 
-function track_templates() {
+function track_templates($template) {
 global $post;
 
 if($post->post_type == 'track-projects') {
 $template = MY_PLUGIN_TEMPLATES . '/projects.php';
 }
-
+return $template
 }
 ?>
