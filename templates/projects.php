@@ -3,9 +3,11 @@
 
 //WP-TRACK - PROJECTS TEMPLATE
 
-wp-header();
+get_header();
 
-wp-footer();
+get_sidebar();
+
+get_footer();
 
 
 ?>
