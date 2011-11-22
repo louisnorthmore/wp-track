@@ -102,7 +102,7 @@ if($post->post_type == 'track-bugs') {
 $template = MY_PLUGIN_TEMPLATES . '/bugs.php';
 }
 if($post->post_type == 'track-tasks') {
-//$template = MY_PLUGIN_TEMPLATES . '/tasks.php';
+$template = MY_PLUGIN_TEMPLATES . '/tasks.php';
 }
 return $template;
 }
