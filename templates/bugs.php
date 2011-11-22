@@ -28,6 +28,7 @@ WP_TRACK - PROJECTS TEMPLATE
 Created: <?php the_date('jS F Y g:ia (e)'); ?><br />
 				Author: <?php the_author(); ?><br />
 				Priority: <?php echo strip_tags( get_the_term_list( get_the_id(), 'priority', '', ', ', '' ) ); ?><br />
+                Status: <?php echo strip_tags( get_the_term_list( get_the_id(), 'status', '', ', ', '' ) ); ?><br />
 				<a target="_blank" title="Edit Bug" alt="Edit Bug" href="/wp-admin/post.php?post=<?php echo get_the_ID(); ?>&action=edit">Edit Bug</a>
 				</p>
 		
