@@ -206,4 +206,14 @@ $args = array(
 echo count( get_posts( $args ) );
 }
 
+function bug_status_options($status) {
+    if ($status == 'closed') { 
+        $actions = array(Re-open);
+        echo "<a href='#'>$actions</a>";
+    }
+    if ($status == 'open') $actions = array(Resolve, Close);
+    
+    
+}
+
 ?>
