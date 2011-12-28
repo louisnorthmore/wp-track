@@ -2,7 +2,7 @@
 /*
 Plugin Name: wp-track
 Plugin URI: http://geekfix.net/wp-track
-Description: Manage Tasks, Projects & Milestones
+Description: Manage Tasks & Projects
 Version: 1.0
 Author: louisnorthmore
 Author URI: http://www.northmore.net
@@ -71,7 +71,7 @@ register_post_type( 'track-bugs',
 	//projects for tasks & bugs
 	register_taxonomy( 'projects', array('track-tasks','track-bugs'), array( 'hierarchical' => true, 'label' => 'Projects', 'query_var' => true, 'rewrite' => true ) );
 	register_taxonomy( 'status', array('track-tasks','track-bugs'), array( 'hierarchical' => true, 'label' => 'Status', 'query_var' => true, 'rewrite' => true ) );
-	register_taxonomy( 'milestone', array('track-tasks','track-bugs'), array( 'hierarchical' => true, 'label' => 'Milestone', 'query_var' => true, 'rewrite' => true ) );
+	//register_taxonomy( 'milestone', array('track-tasks','track-bugs'), array( 'hierarchical' => true, 'label' => 'Milestone', 'query_var' => true, 'rewrite' => true ) );
 	register_taxonomy( 'priority', array('track-tasks','track-bugs'), array( 'hierarchical' => true, 'label' => 'Priority', 'query_var' => true, 'rewrite' => true ) );
 	}
 
@@ -128,7 +128,7 @@ add_task_button(); ?>
 	</td>
 	<td><?php echo strip_tags( get_the_term_list( get_the_id(), 'status', '', ', ', '' ) ); ?>
 	</td>
-	<td><?php echo strip_tags( get_the_term_list( get_the_id(), 'milestone', '', ', ', '' ) ); ?>
+	<!-- <td><?php echo strip_tags( get_the_term_list( get_the_id(), 'milestone', '', ', ', '' ) ); ?> -->
 	</td>
 	<td><?php task_actions(get_the_id(), get_permalink()); ?></td>
 	</tr>
@@ -157,7 +157,7 @@ add_bug_button(); ?>
 	</td>
 	<td><?php echo $terms_as_text = strip_tags( get_the_term_list( get_the_id(), 'status', '', ', ', '' ) ); ?>
 	</td>
-	<td><?php echo $terms_as_text = strip_tags( get_the_term_list( get_the_id(), 'milestone', '', ', ', '' ) ); ?>
+	<!-- <td><?php echo $terms_as_text = strip_tags( get_the_term_list( get_the_id(), 'milestone', '', ', ', '' ) ); ?> -->
 	</td>
 	<td><?php bug_actions(get_the_id(), get_permalink()); ?></td>
 	</tr>
