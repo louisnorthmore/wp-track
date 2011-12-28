@@ -102,7 +102,7 @@ if($post->post_type == 'track-bugs') {
 $template = MY_PLUGIN_TEMPLATES . '/bugs.php';
 }
 if($post->post_type == 'track-tasks') {
-//$template = MY_PLUGIN_TEMPLATES . '/tasks.php';
+$template = MY_PLUGIN_TEMPLATES . '/tasks.php';
 }
 return $template;
 }
@@ -204,6 +204,16 @@ $args = array(
 	'projects' => $project_title
 );
 echo count( get_posts( $args ) );
+}
+
+function bug_status_options($status) {
+    if ($status == 'closed') { 
+        $actions = array(Re-open);
+        echo "<a href='#'>$actions</a>";
+    }
+    if ($status == 'open') $actions = array(Resolve, Close);
+    
+    
 }
 
 ?>
