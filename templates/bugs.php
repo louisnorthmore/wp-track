@@ -71,4 +71,4 @@ Created: <?php the_date('jS F Y g:ia (e)'); ?><br />
 
 		</div><!-- .padder -->
 	</div><!-- #content -->
-<?php get_footer(); ?>
+<?php get_footer() ?>
