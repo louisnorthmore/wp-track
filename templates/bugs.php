@@ -5,8 +5,6 @@ WP_TRACK - PROJECTS TEMPLATE
 ?>
 
 <?php get_header() ?>
-
-
 	<div id="content" class="fullwidth">
 		<div class="padder">
 
