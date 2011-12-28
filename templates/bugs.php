@@ -32,7 +32,7 @@ Created: <?php the_date('jS F Y g:ia (e)'); ?><br />
 		
 <p><?php the_content(); ?></p>
 		
-<?php comments_template( $file = MY_PLUGIN_TEMPLATES . '/bug-comments.php'); ?> 
+<?php //comments_template( $file = MY_PLUGIN_TEMPLATES . '/bug-comments.php'); ?> 
 					</div>
 
 				</div>
