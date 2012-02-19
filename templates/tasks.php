@@ -154,11 +154,13 @@ if ($_GET['project']) { ?>
     <tr class="<?php echo get_post_type(get_the_id()); ?>">
         <td>
             <?php if (get_post_type(get_the_id()) == 'track-tasks') {
-        $img = '/wp-content/plugins/wp-track/icons/tick.png';
+            $img = '/wp-content/plugins/wp-track/icons/tick.png';
+            $title = 'Task';
         } else {
             $img = '/wp-content/plugins/wp-track/icons/bug.png';
+            $title = 'Bug';
         }?>
-            <?php echo "<img src=\"$img\" />"; ?>
+            <?php echo "<img title=\"$title\" src=\"$img\" />"; ?>
             <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></td>
 
         <td>
