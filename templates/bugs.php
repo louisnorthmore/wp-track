@@ -106,12 +106,11 @@ Created: <?php the_date('jS F Y g:ia (e)'); ?><br />
                 <?php }   else { ?>
                 <h1 class="pagetitle">Bugs</h1>
                 <?php }
-            ?>
+            ?> <a href="<?php $_SERVER['php_self'] ?>">Refresh</a>
             <?php add_bug_button(); ?>
             <div id="Bugs" name="bugs">
 
                 <div id="AddBug" style="display: none">
-                    <h3>Add New Bug</h3>
                     <form id="new_post" name="new_post" method="post" action="">
 
                         <p><label for="name">Name</label><br />
