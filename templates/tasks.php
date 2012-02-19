@@ -152,7 +152,10 @@ if ($_GET['project']) { ?>
     <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
     <tr class="<?php echo get_post_type(get_the_id()); ?>">
-        <td><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></td>
+        <td>
+            <?php if (get_post_type(get_the_id()) == 'track-tasks') $img = '/wp-content/plugins/wp-track/icons/tick.png'; ?>
+            <?php echo "<img src=\"$img\" />"; ?>
+            <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></td>
 
         <td>
             <?php echo strip_tags( get_the_term_list( get_the_id(), 'projects', '', ', ', '' ) ); ?>
