@@ -26,13 +26,13 @@ WP_TRACK - BUGS TEMPLATE
 Created: <?php the_date('jS F Y g:ia (e)'); ?><br />
 				Author: <?php the_author(); ?><br />
 				Priority: <?php echo strip_tags( get_the_term_list( get_the_id(), 'priority', '', ', ', '' ) ); ?><br />
-                Status: <?php echo strip_tags( get_the_term_list( get_the_id(), 'status', '', ', ', '' ) ); ?> <?php bug_status_actions($status) ?><br />
+                Status: <?php echo strip_tags( get_the_term_list( get_the_id(), 'status', '', ', ', '' ) ); ?> <?php //bug_status_actions($status) ?><br />
 				<a target="_blank" title="Edit Bug" alt="Edit Bug" href="/wp-admin/post.php?post=<?php echo get_the_ID(); ?>&action=edit">Edit Bug</a>
 				</p>
 		
 <p><?php the_content(); ?></p>
 		
-<?php //comments_template( $file = MY_PLUGIN_TEMPLATES . '/bug-comments.php'); ?> 
+<?php comments_template( $file = MY_PLUGIN_TEMPLATES . '/bug-comments.php'); ?>
 					</div>
 
 				</div>
