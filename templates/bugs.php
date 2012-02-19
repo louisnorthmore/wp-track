@@ -3,18 +3,7 @@
 WP_TRACK - BUGS TEMPLATE
 */
 ?>
-<?php get_header() ?>
-<style>
-    .updated {
-        font-size: 14px;
-        font-weight: bold;
-        background-color:#FFFFE0;
-        border: 1px #E6DB55 solid;
-        padding: 15px;
-        -moz-border-radius: 8px;
-        border-radius: 8px;
-    }
-</style>
+
 <?
 if( $_POST['action'] == 'post') {
 
@@ -54,6 +43,20 @@ if( $_POST['action'] == 'post') {
 
 } // end IF
 ?>
+
+<?php get_header() ?>
+<style>
+    .updated {
+        font-size: 14px;
+        font-weight: bold;
+        background-color:#FFFFE0;
+        border: 1px #E6DB55 solid;
+        padding: 15px;
+        -moz-border-radius: 8px;
+        border-radius: 8px;
+    }
+</style>
+
 
 <script type='text/javascript'>
     function addbug() {
