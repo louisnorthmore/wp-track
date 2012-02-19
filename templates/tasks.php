@@ -132,23 +132,29 @@ Created: <?php the_date('jS F Y g:ia (e)'); ?><br />
 
 
 <?php } else { ?> <!-- end single -->
-<h1 class="pagetitle">Projects</h1>
+<h1 class="pagetitle">Tasks</h1>
 <div class="post" id="post-<?php the_ID(); ?>">
 <div class="entry">
 <table class="wp-list-table widefat fixed posts" cellspacing="0">
-<th>Name</th><th>Author</th><th>Tasks</th><th>Bugs</th>
-<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+    <th>Name</th><th>Project</th><th>Author</th><th>Created</th><th>Priority</th>
+    <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-<tr>
-<td><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></td>
-<td><?php the_author(); ?></td>
-<td><?php count_posts('track-tasks', get_the_title()) ?></td>
-<td><?php count_posts('track-bugs', get_the_title()) ?></td>
-</tr>
+    <tr>
+        <td><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></td>
+
+        <td>
+            <?php $link = strip_tags( get_the_term_list( get_the_id(), 'projects', '', ', ', '' ) );  ?>
+            <?php $link = strtolower(str_replace(' ','-', $link)); ?>
+            <a href="/projects/<?php echo $link ?>"><?php echo strip_tags( get_the_term_list( get_the_id(), 'projects', '', ', ', '' ) ); ?></a>
+        </td>
+        <td><?php the_author(); ?></td>
+        <td><?php the_date('jS F Y g:ia (e)'); ?></td>
+        <td><?php echo strip_tags( get_the_term_list( get_the_id(), 'priority', '', ', ', '' ) ); ?></td>
+    </tr>
 		</div>
 
 			<?php endwhile; endif; ?>
-</table>
+    </table>
 </div>
 </div>
 <?php } ?> <!-- end not single -->

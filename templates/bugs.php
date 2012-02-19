@@ -41,6 +41,7 @@ Created: <?php the_date('jS F Y g:ia (e)'); ?><br />
 
 
 <?php } else { ?> <!-- end single -->
+
 <h1 class="pagetitle">Bugs</h1>
 <div class="post" id="post-<?php the_ID(); ?>">
 <div class="entry">

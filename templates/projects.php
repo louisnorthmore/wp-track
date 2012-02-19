@@ -68,7 +68,7 @@ document.getElementById('tasks').style.display = 'none';
 		<div class="page" id="blog-page">
 
 		<?php if (is_single()) { ?> 
-		
+		<!-- SINGLE -->
 			<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
 				<h1 class="pagetitle"><a href='/projects/'>Projects</a> > <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
