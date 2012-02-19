@@ -139,7 +139,7 @@ Created: <?php the_date('jS F Y g:ia (e)'); ?><br />
 
 <?php
 if ($_GET['project']) { ?>
-    <h1 class="pagetitle">Tasks for <?php echo $_GET['project'] ?></h1>
+    <h1 class="pagetitle">Entries for <?php echo $_GET['project'] ?></h1>
 <?php }   else { ?>
     <h1 class="pagetitle">Tasks</h1>
 <?php }
