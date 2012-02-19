@@ -60,9 +60,7 @@ Created: <?php the_date('jS F Y g:ia (e)'); ?><br />
 <td><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></td>
 
 <td>
-<?php $link = strip_tags( get_the_term_list( get_the_id(), 'projects', '', ', ', '' ) );  ?>
-<?php $link = strtolower(str_replace(' ','-', $link)); ?>
-<a href="/projects/<?php echo $link ?>"><?php echo strip_tags( get_the_term_list( get_the_id(), 'projects', '', ', ', '' ) ); ?></a>
+<?php echo strip_tags( get_the_term_list( get_the_id(), 'projects', '', ', ', '' ) ); ?>
 </td>
 <td><?php the_author(); ?></td>
 <td><?php the_date('jS F Y g:ia (e)'); ?></td>
