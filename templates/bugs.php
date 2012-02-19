@@ -107,7 +107,7 @@ Created: <?php the_date('jS F Y g:ia (e)'); ?><br />
                 <h1 class="pagetitle">Bugs</h1>
                 <?php }
             ?>
-
+            <?php add_bug_button(); ?>
             <div id="Bugs" name="bugs">
 
                 <div id="AddBug" style="display: none">
