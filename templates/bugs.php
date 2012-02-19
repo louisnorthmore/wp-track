@@ -43,7 +43,13 @@ Created: <?php the_date('jS F Y g:ia (e)'); ?><br />
 
 <?php } else { ?> <!-- end single -->
 
-<h1 class="pagetitle">Bugs</h1>
+            <?php
+            if ($_GET['project']) { ?>
+                <h1 class="pagetitle">Entries for <?php echo $_GET['project'] ?></h1>
+                <?php }   else { ?>
+                <h1 class="pagetitle">Bugs</h1>
+                <?php }
+            ?>
 <div class="post" id="post-<?php the_ID(); ?>">
 <div class="entry">
 <table class="wp-list-table widefat fixed posts" cellspacing="0">
