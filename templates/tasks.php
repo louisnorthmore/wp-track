@@ -86,7 +86,7 @@ Created: <?php the_date('jS F Y g:ia (e)'); ?><br />
 				<a target="_blank" title="Edit Project" alt="Edit Project" href="/wp-admin/post.php?post=<?php echo get_the_ID(); ?>&action=edit">Edit Project</a>
 				</p>
 		<div id="tasks" name="tasks">
-		<?php list_project_tasks(get_the_title()); ?>
+		<?php //list_project_tasks(get_the_title()); ?>
 		</div>
 		
 		<div id="Bugs" name="bugs">
@@ -118,7 +118,7 @@ Created: <?php the_date('jS F Y g:ia (e)'); ?><br />
 </form>
 		</div>
 		
-		<?php list_project_bugs(get_the_title()); ?>
+		<?php //list_project_bugs(get_the_title()); ?>
 		</div>
 
 <?php wp_link_pages( array( 'before' => __( '<p><strong>Pages:</strong> ', 'buddypress' ), 'after' => '</p>', 'next_or_number' => 'number')); ?>
