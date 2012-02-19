@@ -67,19 +67,108 @@ document.getElementById('tasks').style.display = 'none';
 
 		<div class="page" id="blog-page">
 
+		<?php if (is_single()) { ?>
+
+			<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+
+				<h1 class="pagetitle"><!--<a href='/projects/'>Projects</a> > --> <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
+
+
+
+				<div class="post" id="post-<?php the_ID(); ?>">
+
+					<div class="entry">
+
+<p>
+Description: <?php echo get_the_content(); ?><br />
+Created: <?php the_date('jS F Y g:ia (e)'); ?><br />
+				Author: <?php the_author(); ?><br />
+				<a target="_blank" title="Edit Task" alt="Edit Task" href="/wp-admin/post.php?post=<?php echo get_the_ID(); ?>&action=edit">Edit Task</a>
+				</p>
+		<div id="tasks" name="tasks">
+		<?php //list_project_tasks(get_the_title()); ?>
+		</div>
+
+		<div id="Bugs" name="bugs">
+
+		<div id="AddBug" style="display: none">
+		<h3>Add New Bug</h3>
+		<form id="new_post" name="new_post" method="post" action="">
+
+<p><label for="name">Name</label><br />
+
+<input type="text" id="name" value="" tabindex="1" size="20" name="name" />
+
+</p>
+
+<p><label for="description">Description</label><br />
+
+<textarea id="description" tabindex="3" name="description" cols="50" rows="6"></textarea>
+
+</p>
+
+<p><input type="submit" value="Submit Bug" tabindex="6" id="submit" name="submit" /></p>
+
+<input type="hidden" name="post_type" id="post_type" value="track-bugs" />
+<input type="hidden" name="action" value="post" />
+<input type="hidden" name="project_name" value="<?php echo get_the_title(); ?>" />
+
+<?php wp_nonce_field( 'new-post' ); ?>
+
+</form>
+		</div>
+
+		<?php //list_project_bugs(get_the_title()); ?>
+		</div>
+
+<?php wp_link_pages( array( 'before' => __( '<p><strong>Pages:</strong> ', 'buddypress' ), 'after' => '</p>', 'next_or_number' => 'number')); ?>
+
+
+					</div>
+
+				</div>
+
 			<?php endwhile; endif; ?>
 
-    <!-- Comments -->
-    <?php comments_template(); ?>
-    <!-- Comments -->
+            <!-- Comments -->
+            <?php comments_template(); ?>
+            <!-- Comments -->
 
+
+<?php } else { ?> <!-- end single -->
 
 <?php
-    } else { ?> <!-- end single --></div><div class="page">
+if ($_GET['project']) { ?>
+    <h1 class="pagetitle">Entries for <?php echo $_GET['project'] ?></h1>
+<?php }   else { ?>
+    <h1 class="pagetitle">Tasks</h1>
+<?php }
+?>
 
-<?php
-    if ($_GET['project']) { ?>
-    </div>
+<div class="post" id="post-<?php the_ID(); ?>">
+<div class="entry">
+<table class="wp-list-table widefat fixed posts" cellspacing="0">
+    <th>Name</th><th>Project</th><th>Author</th><th>Created</th><th>Priority</th>
+    <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+
+    <tr>
+        <td><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></td>
+
+        <td>
+            <?php $link = strip_tags( get_the_term_list( get_the_id(), 'projects', '', ', ', '' ) );  ?>
+            <?php $link = strtolower(str_replace(' ','-', $link)); ?>
+            <a href="/projects/<?php echo $link ?>"><?php echo strip_tags( get_the_term_list( get_the_id(), 'projects', '', ', ', '' ) ); ?></a>
+        </td>
+        <td><?php the_author(); ?></td>
+        <td><?php the_date('jS F Y g:ia (e)'); ?></td>
+        <td><?php echo strip_tags( get_the_term_list( get_the_id(), 'priority', '', ', ', '' ) ); ?></td>
+    </tr>
+		</div>
+
+			<?php endwhile; endif; ?>
+    </table>
+</div>
+</div>
 <?php } ?> <!-- end not single -->
 		</div><!-- .page -->
 
