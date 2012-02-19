@@ -45,7 +45,9 @@ Created: <?php the_date('jS F Y g:ia (e)'); ?><br />
 
             <?php
             if ($_GET['project']) { ?>
-                <h1 class="pagetitle">Entries for <?php echo $_GET['project'] ?></h1>
+                <?php $project = $_GET['project']; ?>
+                <h1 class="pagetitle">Entries for <?php echo $project; ?></h1>
+                <p><?php the_content(); ?></p>
                 <?php }   else { ?>
                 <h1 class="pagetitle">Bugs</h1>
                 <?php }
