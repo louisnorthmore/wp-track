@@ -134,6 +134,9 @@ Created: <?php the_date('jS F Y g:ia (e)'); ?><br />
 <?php } else { ?> <!-- end single -->
 
 <h1 class="pagetitle">Projects</h1>
+
+
+
 <!-- List all projects, we're not on single yet -->
 <div class="post" id="post-<?php the_ID(); ?>">
 <div class="entry">
