@@ -47,7 +47,7 @@ register_post_type( 'track-tasks',
 		'public' => true,
 		'has_archive' => true,
 		'rewrite' => array('slug' => 'tasks'),
-		'supports' => array('title','editor','comments')
+		'supports' => array('title','editor','author','comments')
 		)
 	);
 register_post_type( 'track-bugs',
@@ -59,7 +59,7 @@ register_post_type( 'track-bugs',
 		'public' => true,
 		'has_archive' => true,
 		'rewrite' => array('slug' => 'bugs'),
-		'supports' => array('title','editor','comments')
+		'supports' => array('title','editor','author','comments')
 		)
 	);
 }
@@ -71,7 +71,7 @@ register_post_type( 'track-bugs',
 	//projects for tasks & bugs
 	register_taxonomy( 'projects', array('track-tasks','track-bugs'), array( 'hierarchical' => true, 'label' => 'Projects', 'query_var' => true, 'rewrite' => true ) );
 	register_taxonomy( 'status', array('track-tasks','track-bugs'), array( 'hierarchical' => true, 'label' => 'Status', 'query_var' => true, 'rewrite' => true ) );
-	//register_taxonomy( 'milestone', array('track-tasks','track-bugs'), array( 'hierarchical' => true, 'label' => 'Milestone', 'query_var' => true, 'rewrite' => true ) );
+	register_taxonomy( 'milestone', array('track-tasks','track-bugs'), array( 'hierarchical' => true, 'label' => 'Milestone', 'query_var' => true, 'rewrite' => true ) );
 	register_taxonomy( 'priority', array('track-tasks','track-bugs'), array( 'hierarchical' => true, 'label' => 'Priority', 'query_var' => true, 'rewrite' => true ) );
 	}
 
