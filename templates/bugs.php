@@ -16,18 +16,16 @@ WP_TRACK - BUGS TEMPLATE
     }
 </style>
 <?
-if( 'POST' == $_SERVER['REQUEST_METHOD'] && !empty( $_POST['action'] )) {
+if( $_POST['action'] == 'post') {
 
     // Do some minor form validation to make sure there is content
-    if (isset ($_POST['name'])) {
-        $name =  $_POST['name'];
-    } else {
-        echo 'Please enter a name';
+    if (empty($_POST['name'])) {
+        echo "Your bug needs a name!";
+        die();
     }
-    if (isset ($_POST['description'])) {
-        $description1 = $_POST['description'];
-    } else {
-        echo 'Please enter the content';
+    if (empty($_POST['description'])) {
+        echo "Your bug needs a description!";
+        die();
     }
 
     wp_get_current_user();
