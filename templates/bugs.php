@@ -40,9 +40,12 @@ if( $_POST['action'] == 'post') {
         'comment_status' => 'open',
         'post_type'	=> $_POST['post_type']
     );
-    $postid = wp_insert_post($post, true);
 
-    wp_set_object_terms($postid, 'Medium', 'priority');
+    echo "Adding bug from $user: <br>Title: $name<br>Description: $description1";
+
+    //$postid = wp_insert_post($post, true);
+
+    //wp_set_object_terms($postid, 'Medium', 'priority');
     //wp_set_object_terms($postid, 'Current', 'milestone');
     //wp_set_object_terms( $postid, 'Pending', 'status');
 
