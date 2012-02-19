@@ -135,7 +135,7 @@ Created: <?php the_date('jS F Y g:ia (e)'); ?><br />
 <div class="post" id="post-<?php the_ID(); ?>">
 <div class="entry">
 <table class="wp-list-table widefat fixed posts" cellspacing="0">
-<th>Name</th><th>Project</th><th>Author</th><th>Created</th><th>Priority</th><th>Status</th>
+<th>Name</th><th>Project</th><th>Author</th><th>Created</th><th>Priority</th><th>Status</th><th>Actions</th>
 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
     <tr class="<?php echo get_post_type(get_the_id()); ?>">
@@ -157,6 +157,7 @@ Created: <?php the_date('jS F Y g:ia (e)'); ?><br />
         <td><?php the_date('jS M Y g:ia'); ?></td>
 <td><?php echo strip_tags( get_the_term_list( get_the_id(), 'priority', '', ', ', '' ) ); ?></td>
 <td><?php echo strip_tags( get_the_term_list( get_the_id(), 'status', '', ', ', '' ) ); ?></td>
+<td></td><a target="_blank" title="Edit Bug" alt="Edit Bug" href="/wp-admin/post.php?post=<?php echo get_the_ID(); ?>&action=edit">Edit</a></td>
 </tr>
 		</div>
 
