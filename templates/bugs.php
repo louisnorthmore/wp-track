@@ -33,7 +33,7 @@ if( 'POST' == $_SERVER['REQUEST_METHOD'] && !empty( $_POST['action'] )) {
     wp_get_current_user();
     $user = $current_user->user_login;
 
-    $project_name = $_POST['project_name'];
+    //$project_name = $_POST['project_name'];
     // Add the content of the form to $post as an array
     $post = array(
         'post_title'	=> $name,
@@ -47,6 +47,7 @@ if( 'POST' == $_SERVER['REQUEST_METHOD'] && !empty( $_POST['action'] )) {
     wp_set_object_terms($postid, 'Medium', 'priority');
     //wp_set_object_terms($postid, 'Current', 'milestone');
     wp_set_object_terms( $postid, 'Pending', 'status');
+
     echo "<div class='updated'>Thanks $user! <br/>Bug ($postid) created and is status pending. It will be reviewed shortly.</div>";
     mail('admin@funchatcam.com',"$user submitted a bug - $name","$user submitted a bug - $name");
 
