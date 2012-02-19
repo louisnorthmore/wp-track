@@ -36,8 +36,8 @@ if( 'POST' == $_SERVER['REQUEST_METHOD'] && !empty( $_POST['action'] )) {
     //$project_name = $_POST['project_name'];
     // Add the content of the form to $post as an array
     $post = array(
-        'post_title'	=> $name,
-        'post_content'	=> $description1,
+        'post_title'	=> "$name",
+        'post_content'	=> "$description1",
         'post_status'	=> 'publish',			// Choose: publish, preview, future, etc.
         'comment_status' => 'open',
         'post_type'	=> $_POST['post_type']
