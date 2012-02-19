@@ -31,8 +31,9 @@ Created: <?php the_date('jS F Y g:ia (e)'); ?><br />
 				</p>
 		
 <p><?php the_content(); ?></p>
-		
-<?php comments_template( $file = MY_PLUGIN_TEMPLATES . '/bug-comments.php'); ?>
+                        <!-- Comments -->
+                        <?php comments_template(); ?>
+                        <!-- Comments -->
 					</div>
 
 				</div>
