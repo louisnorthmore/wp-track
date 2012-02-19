@@ -1,6 +1,6 @@
 <?php
 /*
-WP_TRACK - PROJECTS TEMPLATE
+WP_TRACK - BUGS TEMPLATE
 */
 ?>
 
