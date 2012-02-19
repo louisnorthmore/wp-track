@@ -142,7 +142,7 @@ Created: <?php the_date('jS F Y g:ia (e)'); ?><br />
 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
 <tr>
-<td><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></td>
+<td><a href="<?php the_permalink(); ?>?project=<?php the_title(); ?>"><?php the_title(); ?></a></td>
 <td><?php the_author(); ?></td>
 <td><?php count_posts('track-tasks', get_the_title()) ?></td>
 <td><?php count_posts('track-bugs', get_the_title()) ?></td>
