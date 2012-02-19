@@ -36,15 +36,15 @@ if( $_POST['action'] == 'post') {
     $post = array(
         'post_title'	=> wp_strip_all_tags($name),
         'post_content'	=> wp_strip_all_tags($description1),
-        'post_status'	=> 'publish',			// Choose: publish, preview, future, etc.
+        'post_status'	=> 'pending',			// Choose: publish, preview, future, etc.
         'comment_status' => 'open',
         'post_type'	=> $_POST['post_type']
     );
-    $postid = wp_insert_post($post);
+    $postid = wp_insert_post($post, true);
 
     wp_set_object_terms($postid, 'Medium', 'priority');
     //wp_set_object_terms($postid, 'Current', 'milestone');
-    wp_set_object_terms( $postid, 'Pending', 'status');
+    //wp_set_object_terms( $postid, 'Pending', 'status');
 
     echo "<div class='updated'>Thanks $user! <br/>Bug ($postid) created and is status pending. It will be reviewed shortly.</div>";
     mail('admin@funchatcam.com',"$user submitted a bug - $name","$user submitted a bug - $name");
