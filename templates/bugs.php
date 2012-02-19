@@ -50,13 +50,14 @@ Created: <?php the_date('jS F Y g:ia (e)'); ?><br />
                 <h1 class="pagetitle">Bugs</h1>
                 <?php }
             ?>
+
 <div class="post" id="post-<?php the_ID(); ?>">
 <div class="entry">
 <table class="wp-list-table widefat fixed posts" cellspacing="0">
 <th>Name</th><th>Project</th><th>Author</th><th>Created</th><th>Priority</th>
 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-<tr class="<?php get_post_type(get_the_id()); ?>">
+<tr class="<?php echo get_post_type(get_the_id()); ?>">
 <td><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></td>
 
 <td>
