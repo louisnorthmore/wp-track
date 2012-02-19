@@ -3,7 +3,7 @@
 Plugin Name: wp-track
 Plugin URI: http://geekfix.net/wp-track
 Description: Manage Tasks & Projects
-Version: 1.0
+Version: 1.1
 Author: louisnorthmore
 Author URI: http://www.northmore.net
 License: GPL2
