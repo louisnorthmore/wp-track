@@ -14,6 +14,7 @@ define( 'MY_PLUGIN_TEMPLATES', dirname( __FILE__ ) . '/templates' );
 //capabilities
 $role = get_role( 'administrator' );
 $role->add_cap( 'add_tasks' );
+$role->add_cap( 'add_bugs' );
 $role->add_cap( 'manage_bugs' );
 $role->add_cap( 'manage_tasks' );
 $role->add_cap( 'manage_projects' );
@@ -175,7 +176,7 @@ echo "<a href='/wp-admin/post-new.php?post_type=track-tasks'>Add Task</a>";
 }
 
 function add_bug_button() {
-if( current_user_can('add_tasks') ) {
+if( current_user_can('add_bugs') ) {
 echo "<a href='javascript:addbug()'>Add Bug</a>";
 }
 }
