@@ -157,7 +157,10 @@ Created: <?php the_date('jS F Y g:ia (e)'); ?><br />
         <td><?php the_date('jS M Y g:ia'); ?></td>
 <td><?php echo strip_tags( get_the_term_list( get_the_id(), 'priority', '', ', ', '' ) ); ?></td>
 <td><?php echo strip_tags( get_the_term_list( get_the_id(), 'status', '', ', ', '' ) ); ?></td>
-<td><a target="_blank" title="Edit Bug" alt="Edit Bug" href="/wp-admin/post.php?post=<?php echo get_the_ID(); ?>&action=edit">Edit</a></td>
+<td>
+    <a target="_blank" title="Edit Bug" alt="Edit Bug" href="/wp-admin/post.php?post=<?php echo get_the_ID(); ?>&action=edit">Edit</a>
+    <a target="_blank" title="Delete Bug" alt="Delete Bug" href="/wp-admin/post.php?post=<?php echo get_the_ID(); ?>&action=delete">Delete</a>
+</td>
 </tr>
 		</div>
 
