@@ -45,9 +45,8 @@ if( 'POST' == $_SERVER['REQUEST_METHOD'] && !empty( $_POST['action'] )) {
     $postid = wp_insert_post($post);
 
     wp_set_object_terms($postid, 'Medium', 'priority');
-    wp_set_object_terms($postid, 'Current', 'milestone');
+    //wp_set_object_terms($postid, 'Current', 'milestone');
     wp_set_object_terms( $postid, 'Pending', 'status');
-    wp_set_object_terms( $postid, 'FCC Client', 'projects');
     echo "<div class='updated'>Thanks $user! <br/>Bug ($postid) created and is status pending. It will be reviewed shortly.</div>";
     mail('admin@funchatcam.com',"$user submitted a bug - $name","$user submitted a bug - $name");
 
