@@ -111,7 +111,7 @@ Created: <?php the_date('jS F Y g:ia (e)'); ?><br />
 
                 <div id="AddBug" style="display: none">
                     <h3>Add New Bug</h3>
-                    <form id="new_post" name="new_post" method="post" action="/bugs/">
+                    <form id="new_post" name="new_post" method="post" action="">
 
                         <p><label for="name">Name</label><br />
                             <input type="text" id="name" value="" tabindex="1" size="20" name="name" />
