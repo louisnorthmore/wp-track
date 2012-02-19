@@ -111,25 +111,20 @@ Created: <?php the_date('jS F Y g:ia (e)'); ?><br />
 
                 <div id="AddBug" style="display: none">
                     <h3>Add New Bug</h3>
-                    <form id="new_post" name="new_post" method="post" action="">
+                    <form id="new_post" name="new_post" method="post" action="/bugs/">
 
                         <p><label for="name">Name</label><br />
-
                             <input type="text" id="name" value="" tabindex="1" size="20" name="name" />
-
                         </p>
 
                         <p><label for="description">Description</label><br />
-
                             <textarea id="description" tabindex="3" name="description" cols="50" rows="6"></textarea>
-
                         </p>
 
                         <p><input type="submit" value="Submit Bug" tabindex="6" id="submit" name="submit" /></p>
 
                         <input type="hidden" name="post_type" id="post_type" value="track-bugs" />
                         <input type="hidden" name="action" value="post" />
-                        <input type="hidden" name="project_name" value="<?php echo get_the_title(); ?>" />
 
                         <?php wp_nonce_field( 'new-post' ); ?>
 
