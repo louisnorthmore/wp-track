@@ -59,8 +59,17 @@ Created: <?php the_date('jS F Y g:ia (e)'); ?><br />
 <th>Name</th><th>Project</th><th>Author</th><th>Created</th><th>Priority</th>
 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-<tr class="<?php echo get_post_type(get_the_id()); ?>">
-<td><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></td>
+    <tr class="<?php echo get_post_type(get_the_id()); ?>">
+        <td>
+            <?php if (get_post_type(get_the_id()) == 'track-tasks') {
+            $img = '/wp-content/plugins/wp-track/icons/tick.png';
+            $title = 'Task';
+        } else {
+            $img = '/wp-content/plugins/wp-track/icons/bug.png';
+            $title = 'Bug';
+        }?>
+            <?php echo "<img title=\"$title\" src=\"$img\" />"; ?>
+            <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></td>
 
 <td>
 <?php echo strip_tags( get_the_term_list( get_the_id(), 'projects', '', ', ', '' ) ); ?>
