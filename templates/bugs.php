@@ -75,7 +75,7 @@ Created: <?php the_date('jS F Y g:ia (e)'); ?><br />
 <?php echo strip_tags( get_the_term_list( get_the_id(), 'projects', '', ', ', '' ) ); ?>
 </td>
 <td><?php the_author(); ?></td>
-<td><?php the_date('jS F Y g:ia (e)'); ?></td>
+        <td><?php the_date('jS M Y g:ia'); ?></td>
 <td><?php echo strip_tags( get_the_term_list( get_the_id(), 'priority', '', ', ', '' ) ); ?></td>
 <td><?php echo strip_tags( get_the_term_list( get_the_id(), 'status', '', ', ', '' ) ); ?></td>
 </tr>
