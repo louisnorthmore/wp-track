@@ -83,7 +83,7 @@ document.getElementById('tasks').style.display = 'none';
 Description: <?php echo get_the_content(); ?><br />
 Created: <?php the_date('jS F Y g:ia (e)'); ?><br />
 				Author: <?php the_author(); ?><br />
-				<a target="_blank" title="Edit Project" alt="Edit Project" href="/wp-admin/post.php?post=<?php echo get_the_ID(); ?>&action=edit">Edit Project</a>
+				<a target="_blank" title="Edit Task" alt="Edit Task" href="/wp-admin/post.php?post=<?php echo get_the_ID(); ?>&action=edit">Edit Task</a>
 				</p>
 		<div id="tasks" name="tasks">
 		<?php //list_project_tasks(get_the_title()); ?>
@@ -129,6 +129,10 @@ Created: <?php the_date('jS F Y g:ia (e)'); ?><br />
 				</div>
 
 			<?php endwhile; endif; ?>
+
+            <!-- Comments -->
+            <?php comments_template(); ?>
+            <!-- Comments -->
 
 
 <?php } else { ?> <!-- end single -->
